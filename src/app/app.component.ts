@@ -6,5 +6,19 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'first_project_angular';
+  document = {
+    title : 'Title',
+    paragraph : 'Write your paragraph'
+  };
+  changeTitle(event : Event) {
+    let element = event.target as HTMLInputElement;
+    this.document.title = element.value
+  };
+  changeParagraph(event : Event) {
+    let element = event.target as HTMLInputElement;
+    this.document.paragraph = element.value;
+  }
+  deleteContain() {
+    this.document.paragraph = '';
+  };
 }
